@@ -405,7 +405,7 @@ class Spelling(DataAugmentationAbstract):
                 start = e[0]
                 end = e[1] + 1
                 substring = new_text[start:end]
-                replacement = self.grapheme_spelling_dict[substring]
+                replacement = self.grapheme_spelling_dict.get(substring,substring)
                 # Select a random element from the list of replacements
                 # replacement = random.choice(replacement)
                 start_str = new_text[:start]
